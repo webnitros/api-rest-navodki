@@ -66,7 +66,7 @@ if ($results->info->http_code == 200) {
 > * relevance,name,published,updatedon,start_date,end_date,max_price,a_price,c_price*
 
 ```
-http://navodki.ru/api/tenders?sortby=updatedon
+https://navodki.ru/api/tenders?sortby=updatedon
 ```
 
 
@@ -75,7 +75,7 @@ http://navodki.ru/api/tenders?sortby=updatedon
 Вернет в порядке наибольшего совпадения
 
 ```
-http://dev.navodki.ru/api/tenders?search="услуги%20общественного%20питания"&sortby=relevance&sortdir=DESC&print=1
+https://navodki.ru/api/tenders?search="услуги%20общественного%20питания"&sortby=relevance&sortdir=DESC&print=1
 ```
 
 
@@ -86,7 +86,7 @@ http://dev.navodki.ru/api/tenders?search="услуги%20общественно�
 В случае успешного подсчета средней цены по указанным параметрам результат будет со статусом **200 OK**.
 
 ```
-http://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
+https://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
 ```
 
 Пример успешного ответа:
@@ -151,13 +151,13 @@ http://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
 #### Вернет список тендоров по ключевому запросу
 
 ```
-http://dev.navodki.ru/api/tenders?query=услуги общественного питания&print=1
+https://navodki.ru/api/tenders?query=услуги общественного питания&print=1
 ```
 
 #### Список тендоров по точному совпадению поискового запроса и сортивровкой по наибольшим совпадениям
 
 ```
-http://dev.navodki.ru/api/tenders?search="услуги общественного питания"&sortby=relevance&sortdir=DESC&print=1
+https://navodki.ru/api/tenders?search="услуги общественного питания"&sortby=relevance&sortdir=DESC&print=1
 ```
 
 > проверить как работает поискова строка проще всего на нашем сайте [https://navodki.ru/tenders/](https://navodki.ru/tenders/)
@@ -231,7 +231,7 @@ http://dev.navodki.ru/api/tenders?search="услуги общественног�
 Выборка по уникальному номеру с гос закупок ЕИС
 
 ```php
-http://dev.navodki.ru/api/tenders?num=31705899311
+https://navodki.ru/api/tenders?num=31705899311
 ```
 
 
@@ -240,7 +240,7 @@ http://dev.navodki.ru/api/tenders?num=31705899311
 
 Выборка по id
 ```php
-http://dev.navodki.ru/api/tenders?tid=14448486
+https://navodki.ru/api/tenders?tid=14448486
 ```
 
 
@@ -250,7 +250,7 @@ http://dev.navodki.ru/api/tenders?tid=14448486
 Выборка по статусу
 
 ```
-http://dev.navodki.ru/api/tenders?status=2,3,4,6
+https://navodki.ru/api/tenders?status=2,3,4,6
 ```
   
 Список значений: 
@@ -282,7 +282,7 @@ http://dev.navodki.ru/api/tenders?status=2,3,4,6
 Выборка тендеров по закону
 
 ```
-http://dev.navodki.ru/api/tenders?platform_id=1,3
+https://navodki.ru/api/tenders?platform_id=1,3
 ```
   
 Список значений: 
@@ -311,7 +311,7 @@ http://dev.navodki.ru/api/tenders?platform_id=1,3
 Минимальное значение: "01.01.2016"
 Максимальноез значение: "текущая дата"
 
-http://dev.navodki.ru/api/tenders?updatedon=07-02-2018,20-02-2018
+https://navodki.ru/api/tenders?updatedon=07-02-2018,20-02-2018
 ```
 
 
@@ -326,7 +326,7 @@ http://dev.navodki.ru/api/tenders?updatedon=07-02-2018,20-02-2018
 Минимальное значение: "0"
 Максимальноез значение: "1000000000000000"
 
-http://dev.navodki.ru/api/tenders?max_price=10000,10000000
+https://navodki.ru/api/tenders?max_price=10000,10000000
 ```
 
 
@@ -342,7 +342,7 @@ http://dev.navodki.ru/api/tenders?max_price=10000,10000000
 Формат ввода данных: "number"
 Допустимые значения: "10 или 12 цифр"
 
-http://dev.navodki.ru/api/tenders?customers=7708697381
+https://navodki.ru/api/tenders?customers=7708697381
 ```
 
 
@@ -356,13 +356,13 @@ http://dev.navodki.ru/api/tenders?customers=7708697381
 Разделитель: ","
 Формат ввода данных: "int"
 
-http://dev.navodki.ru/api/tenders?categories=244,380,245
+https://navodki.ru/api/tenders?categories=244,380,245
 ```
   
 Список значений: 
 
 ```
-http://dev.navodki.ru/api/categories
+https://navodki.ru/api/categories
 ```
 
 
@@ -375,13 +375,13 @@ http://dev.navodki.ru/api/categories
 Разделитель: ","
 Формат ввода данных: "int"
 
-http://dev.navodki.ru/api/tenders?regions=244,380,245
+https://navodki.ru/api/tenders?regions=244,380,245
 ```
   
 Список значений: 
 
 ```
-http://dev.navodki.ru/api/regions
+https://navodki.ru/api/regions
 ```
 
 
@@ -394,13 +394,13 @@ http://dev.navodki.ru/api/regions
 Разделитель: ","
 Формат ввода данных: "int"
 
-http://dev.navodki.ru/api/tenders?etp=9,7,65,121,2,63,117
+https://navodki.ru/api/tenders?etp=9,7,65,121,2,63,117
 ```
   
 Список значений: 
 
 ```
-http://dev.navodki.ru/api/etp
+https://navodki.ru/api/etp
 ```
 
 <a name="user-content-pw"></a>
@@ -412,11 +412,11 @@ http://dev.navodki.ru/api/etp
 Разделитель: ","
 Формат ввода данных: "int"
 
-http://dev.navodki.ru/api/tenders?pw=212,3512
+https://navodki.ru/api/tenders?pw=212,3512
 ```
   
 Список значений: 
 
 ```
-http://dev.navodki.ru/api/pw
+https://navodki.ru/api/pw
 ```
