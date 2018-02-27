@@ -31,9 +31,17 @@ API возвращает данные в формате JSON. Формат да�
 |:--------------|:--------------|:-----------:|------------------------:|--------------------:|
 |  limit        |  10           |  `int`      |  От 0 до 100            |   От 0 до 100   |
 |  page         |  1            |  `int`      |  От 1 до 1000           | номер страницы 
-|  sortby       |  updatedon    |  `string`   |  name,published,updatedon,start_date,end_date,max_price,a_price,c_price  | сортировка по полю|
+|  sortby       |  updatedon    |  `string`   |  поля для сортировки  | сортировка по полю|
 |  sortdir      |  DESC         |  `int`      |  DESC,ASC      | порядок сортировки |
 
+
+
+> Доступные поля для сортировки*
+> *name,published,updatedon,start_date,end_date,max_price,a_price,c_price*
+
+```
+http://navodki.ru/api/tenders?sortby=updatedon
+```
 
 
 ### Формат данных в ответе
