@@ -176,8 +176,8 @@ http://dev.navodki.ru/api/tenders?search="услуги общественног�
 
 |  Поле         | Тип данных        | Фильтры         | Название |
 |:--------------|:------------------|:----------------|:----------------:|
-|  num          |  `varchard`       | true            | [Номер закупки присвоеный ЕИС](#num)                                             | 
-|  tid          |  `int`            | true            | [id тендера](#tid)                                             | 
+|  num          |  `varchard`       | true            | [Номер закупки присвоеный ЕИС](#user-content-num)                                             | 
+|  tid          |  `int`            | true            | [id тендера](#user-content-tid)                                             | 
 |  uri          |  `string`         | true            | Ссылка                                                        | 
 |  name         |   `string`        | false           | Наименование                                                  | 
 |  subject      |  `string`         | false           | Наименование (для 223 закона)                              |  
@@ -225,7 +225,7 @@ http://dev.navodki.ru/api/tenders?search="услуги общественног�
 ## Методы для работы с типами транспорта и кузова
 
 
-<a name="num"></a>
+<a name="user-content-num"></a>
 ### Номер закупки присвоеный ЕИС
 
 Выборка по уникальному номеру с гос закупок ЕИС
@@ -235,7 +235,7 @@ http://dev.navodki.ru/api/tenders?num=31705899311
 ```
 
 
-<a name="tid"></a>
+<a name="user-content-tid"></a>
 ### ID тендер
 
 Выборка по id
@@ -244,7 +244,7 @@ http://dev.navodki.ru/api/tenders?tid=14448486
 ```
 
 
-<a name="status"></a>
+<a name="user-content-status"></a>
 ### Статус
 
 Выборка по статусу
@@ -276,7 +276,7 @@ http://dev.navodki.ru/api/tenders?status=2,3,4,6
 ]
 ```
 
-<a name="platform_id"></a>
+<a name="user-content-platform_id"></a>
 ### ID закона
 
 Выборка тендеров по закону
@@ -301,7 +301,7 @@ http://dev.navodki.ru/api/tenders?platform_id=1,3
 ```
 
 
-<a name="date"></a>
+<a name="user-content-date"></a>
 ### Выборка дате для полей (published,updatedon,start_date,end_date)
 
 Обе даты устанавливать обязательно
@@ -315,7 +315,7 @@ http://dev.navodki.ru/api/tenders?updatedon=07-02-2018,20-02-2018
 ```
 
 
-<a name="price"></a>
+<a name="user-content-price"></a>
 ### Выборка цене для полей (max_price,a_price,c_price)
 
 Оба значения обязательны.
@@ -331,7 +331,7 @@ http://dev.navodki.ru/api/tenders?max_price=10000,10000000
 
 
 
-<a name="customers"></a>
+<a name="user-content-customers"></a>
 ### Заказчики
 
 У одной закупки может быть не ограниченое количество заказчиков.
@@ -346,7 +346,7 @@ http://dev.navodki.ru/api/tenders?customers=7708697381
 ```
 
 
-<a name="categories"></a>
+<a name="user-content-categories"></a>
 ### Отрасли
 
 
@@ -366,7 +366,7 @@ http://dev.navodki.ru/api/categories
 ```
 
 
-<a name="regions"></a>
+<a name="user-content-regions"></a>
 ### Регион
 
 Выборка данных по региону закупок заказчика.
@@ -385,7 +385,7 @@ http://dev.navodki.ru/api/regions
 ```
 
 
-<a name="etp_id"></a>
+<a name="user-content-etp_id"></a>
 ### Площадка
 
 Выборка данных по площадке размещения закупки.
@@ -403,7 +403,7 @@ http://dev.navodki.ru/api/tenders?etp=9,7,65,121,2,63,117
 http://dev.navodki.ru/api/etp
 ```
 
-<a name="pw"></a>
+<a name="user-content-pw"></a>
 ### Способу определения поставщика
 
 Выборка данных по способу определения поставщика
