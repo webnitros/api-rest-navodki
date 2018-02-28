@@ -10,15 +10,13 @@ API позволяет интегрировать данные закупок и
 
 Бэта 2.0
 
-> для получение доступа пишете на email **info@navodki.ru**
-> тестовый доступ с ограничениями уже прописан в примере
 
-
-## Демо список получаемы тендеров
+## Демонстрация списка закупок
 
 Для демостранции возможностей можете перейти по ссылке для просмотра
 
 [https://navodki.ru/api/tenders](https://navodki.ru/api/tenders)
+
 
 --- 
 
@@ -57,6 +55,9 @@ API возвращает данные в формате JSON.
 |:-----------------|:--------------|
 |  access_token    |  API-ключ     |
 |  client_secret   |  Секретный ключ     |
+
+
+> для получения ключей свяжитесь с нами по email **info@navodki.ru**
 
 ---
 
@@ -97,7 +98,7 @@ if ($results->info->http_code == 200) {
 
 ---
 
-##### Пример успешного ответа:
+#### Пример успешного ответа:
 
 ```json
 {
@@ -168,6 +169,7 @@ if ($results->info->http_code == 200) {
 
 > Если использовать RestClient то можно дополнительно посмотреть код ошибки в ```$results->info->http_code```
 
+---
 
 <a name="user-content-list"></a>
 ### Управление списками
@@ -204,10 +206,7 @@ https://navodki.ru/api/tenders?sortby=updatedon
 https://navodki.ru/api/tenders?search="услуги%20общественного%20питания"&sortby=relevance&sortdir=DESC&print=1
 ```
 
-
 ---
-
-
 
 
 <a name="user-content-params"></a>
