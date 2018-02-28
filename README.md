@@ -1,4 +1,4 @@
-# REST API  сайта NAVODKI.RU
+# REST API  сайта NAVODKI.RU (zakupki.gov.ru)
 
 API позволяет интегрировать данные закупок из ЕИС (zakupki.gov.ru) 
 
@@ -91,12 +91,13 @@ if ($results->info->http_code == 200) {
 |  Параметр     | По умолчанию | Тип данных   | Доступные значения      | Описание            |
 |:--------------|:--------------|:-----------:|------------------------:|--------------------:|
 |  limit        |  10           |  `int`      |  От 0 до 100            |   Количество показываемых тендеров   |
-|  print        |  false        |  `int`      |  1            |   Распечатать ответ в читаемом виде   |
+|  print        |  false        |  `int`      |  1                      |   Распечатать ответ в читаемом виде   |
 |  page         |  1            |  `int`      |  От 1 до 1000           | номер страницы 
 |  sortby       |  updatedon    |  `string`   | *  | сортировка по полю|
 |  sortdir      |  DESC         |  `int`      |  DESC,ASC      | порядок сортировки |
 
 
+*print=1 так же устанавливается если не указан access_token в заголовке*
 
 #### Доступные поля для сортировки: 
 relevance,name,published,updatedon,start_date,end_date,max_price,a_price,c_price
