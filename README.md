@@ -284,7 +284,8 @@ https://navodki.ru/api/tenders?num=31705899311
 <a name="user-content-tid"></a>
 ### ID тендер
 
-Выборка по id
+Выборка по id. Системный индитификатор записи. Остается не изменным при изменении редакций закупок.
+
 ```php
 https://navodki.ru/api/tenders?tid=14448486
 ```
@@ -293,13 +294,13 @@ https://navodki.ru/api/tenders?tid=14448486
 <a name="user-content-status"></a>
 ### Статус
 
-Выборка по статусу
+Статус закупки определяется на основании способов определения поставщика. 
 
 ```
 https://navodki.ru/api/tenders?status=2,3,4,6
 ```
   
-Список значений: 
+Список возмржных значнений: 
 
 ```javascript
 [
@@ -325,13 +326,13 @@ https://navodki.ru/api/tenders?status=2,3,4,6
 <a name="user-content-platform_id"></a>
 ### ID закона
 
-Выборка тендеров по закону
+Закупки по 44 ФЗ и 223 ФЗ 
 
 ```
 https://navodki.ru/api/tenders?platform_id=1,3
 ```
   
-Список значений: 
+Список возмржных значнений: 
 
 ```javascript
 [
@@ -353,8 +354,9 @@ https://navodki.ru/api/tenders?platform_id=1,3
 Обе даты устанавливать обязательно
 
 ```
+Разделитель: ","
 Формат ввода данных: "d-m-Y"
-Минимальное значение: "01.01.2016"
+Минимальное значение: "01-01-2016"
 Максимальное значение: "текущая дата"
 
 https://navodki.ru/api/tenders?updatedon=07-02-2018,20-02-2018
