@@ -10,18 +10,26 @@ API позволяет интегрировать данные закупок и
 
 Бэта 2.0
 
+> для получение доступа пишете на email **info@navodki.ru**
+> тестовый доступ с ограничениями уже прописан в примере
+
 Содержание 
 
 * [Справочники](#user-content-directory)    
-* [Список полей](#user-content-fields)    
-* [Управление поисковыми запросами](#user-content-query)    
+* [Список полей](#user-content-fields)     
 * [Список поддерживаемых параметров](#user-content-params)    
 * [Коллекция филтров](#user-content-filters)
-    - [Выборка цене](#user-content-price)    
-    - [Выборка по дате](#user-content-price)    
-
-
-
+    - [Выборка по ключевым словам](#user-content-query)   
+    - [Выборка по номеру закупки](#user-content-num)    
+    - [Выборка по ID](#user-content-tid)    
+    - [Выборка по статусу](#user-content-status)    
+    - [Выборка по цене](#user-content-price)    
+    - [Выборка по дате](#user-content-date)    
+    - [Выборка по заказчику](#user-content-customers)    
+    - [Выборка по отрасли](#user-content-categories)    
+    - [Выборка по региону](#user-content-regions)    
+    - [Выборка по площадке](#user-content-etp_id)    
+    - [Выборка по способу определения поставщика](#user-content-pw)    
 
 
 ## Получение закупок через API 
@@ -39,8 +47,7 @@ API возвращает данные в формате JSON.
 |  access_token    |  API-ключ     |
 |  client_secret   |  Секретный ключ     |
 
-> для получение доступа пишете на email **info@navodki.ru**
-> тестовый доступ с ограничениями уже прописан в примере
+
 
 ```php
 <?php
@@ -186,7 +193,7 @@ https://navodki.ru/api/tenders?tid=14448486
 
 
 <a name="user-content-query"></a>
-### Управление поисковыми запросами
+### Выборка по ключевым словам
 
 Можно использовать поисковые запросы для выборки данных параметр для поиска **query**
 
