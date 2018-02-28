@@ -123,7 +123,7 @@ https://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
           "num": 31705899311,
           "tid": 14754476,
           "uri": "https://navodki.ru/tenders/14754476",
-          "url_oos": "https://navodki.ru/tenders/14754476?redirect=oos",
+          "url_oos": "http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?regNumber=0137300043318000065",
           "name": "Поставка канцелярских товаров",
           "subject": "Поставка канцелярских товаров",
           "status": 2,
@@ -366,7 +366,6 @@ https://navodki.ru/api/tenders?max_price=10000,10000000
 https://navodki.ru/api/tenders?customers=7708697381
 ```
 
-
 <a name="user-content-categories"></a>
 ### Отрасли
 
@@ -378,9 +377,6 @@ https://navodki.ru/api/tenders?customers=7708697381
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?categories=244,380,245
-
-Справочник 
-https://navodki.ru/api/categories?print=1
 ```
 
 
@@ -410,9 +406,6 @@ https://navodki.ru/api/regions?print=1
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?etp=9,7,65,121,2,63,117
-
-Справочник 
-https://navodki.ru/api/etp?print=1
 ```
 
 <a name="user-content-pw"></a>
@@ -425,7 +418,18 @@ https://navodki.ru/api/etp?print=1
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?pw=212,3512
-
-Справочник 
-https://navodki.ru/api/pw?print=1
 ```
+
+
+
+## Справочник
+
+Данные для фильтрации списка тендеров
+*id* справочника является значением для выборки
+
+|  URL                                  | Описание                      |
+|:--------------------------------------|:--------------------------------------|
+|  https://navodki.ru/api/pw            |  Список способов определения поставщика |
+|  https://navodki.ru/api/etp           |  Список площадок    |
+|  https://navodki.ru/api/regions       |  Список регионов    ||
+|  https://navodki.ru/api/categories    |  Список отраслей    ||
