@@ -86,8 +86,9 @@ if ($results->info->http_code == 200) {
 
 
 
-> Доступные поля для сортировки: 
-> * relevance,name,published,updatedon,start_date,end_date,max_price,a_price,c_price*
+#### Доступные поля для сортировки: 
+relevance,name,published,updatedon,start_date,end_date,max_price,a_price,c_price
+
 
 ```
 https://navodki.ru/api/tenders?sortby=updatedon
@@ -107,7 +108,7 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 
 ### Формат данных в ответе
 
-В случае успешного подсчета средней цены по указанным параметрам результат будет со статусом **200 OK**.
+В случае успешнах, код ответа будет со статусом **200 OK**.
 
 ```
 https://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
@@ -123,7 +124,6 @@ https://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
           "tid": 14754476,
           "uri": "https://navodki.ru/tenders/14754476",
           "url_oos": "https://navodki.ru/tenders/14754476?redirect=oos",
-          "url_placer": "https://navodki.ru/tenders/14754476?redirect=placer",
           "name": "Поставка канцелярских товаров",
           "subject": "Поставка канцелярских товаров",
           "status": 2,
@@ -172,18 +172,14 @@ https://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
 
 Можно использовать поисковые запросы для выборки данных параметр для поиска **query**
 
-Примеры:
-
-#### Вернет список тендоров по ключевому запросу
-
 ```
+
+Вернет список тендоров по ключевому запросу
 https://navodki.ru/api/tenders?query=услуги общественного питания&print=1
-```
 
-#### Список тендеров по точному совпадению поискового запроса и сортивровкой по наибольшим совпадениям
-
-```
+Список тендеров по точному совпадению поискового запроса и сортивровкой по наибольшим совпадениям
 https://navodki.ru/api/tenders?search="услуги общественного питания"&sortby=relevance&sortdir=DESC&print=1
+
 ```
 
 > проверить как работает поискова строка проще всего на нашем сайте [https://navodki.ru/tenders/](https://navodki.ru/tenders/)
