@@ -8,6 +8,18 @@ API позволяет интегрировать данные закупок и
 * получить информацию о закупке по номеру закупки
 
 
+Содержание 
+
+* [Справочники](#user-content-directory)    
+* [Список полей](#user-content-fields)    
+* [Управление поисковыми запросами](#user-content-query)    
+* [Список поддерживаемых параметров](#user-content-params)    
+* [Коллекция филтров](#user-content-filters)
+    - [Выборка цене](#user-content-price)    
+    - [Выборка по дате](#user-content-price)    
+
+
+
 
 
 ## Получение закупок через API 
@@ -106,6 +118,8 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 
 ---
 
+
+<a name="user-content-fields"></a>
 ### Формат данных в ответе
 
 В случае успешнах, код ответа будет со статусом **200 OK**.
@@ -168,6 +182,7 @@ https://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
 ```
 
 
+<a name="user-content-query"></a>
 ### Управление поисковыми запросами
 
 Можно использовать поисковые запросы для выборки данных параметр для поиска **query**
@@ -192,7 +207,7 @@ https://navodki.ru/api/tenders?search="услуги -общественного 
 
 
 
-
+<a name="user-content-params"></a>
 ### Список поддерживаемых параметров
 
 На данный момент поддерживаются следующие параметры:
@@ -242,8 +257,8 @@ https://navodki.ru/api/tenders?search="услуги -общественного 
 ```
 
 
-
-## Методы для работы с типами транспорта и кузова
+<a name="user-content-filters"></a>
+## Коллекция филтров
 
 
 <a name="user-content-num"></a>
@@ -421,7 +436,7 @@ https://navodki.ru/api/tenders?pw=212,3512
 ```
 
 
-
+<a name="user-content-directory"></a>
 ## Справочник
 
 Данные для фильтрации списка тендеров
