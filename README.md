@@ -311,9 +311,11 @@ https://navodki.ru/api/tenders?platform_id=1,3
 
 
 <a name="user-content-date"></a>
-### Выборка дате для полей (published,updatedon,start_date,end_date)
+### Выборка по дате 
 
 Обе даты устанавливать обязательно
+
+> используется для полей published,updatedon,start_date,end_date
 
 ```
 Разделитель: ","
@@ -326,9 +328,11 @@ https://navodki.ru/api/tenders?updatedon=07-02-2018,20-02-2018
 
 
 <a name="user-content-price"></a>
-### Выборка цене для полей (max_price,a_price,c_price)
+### Выборка цене для полей
 
 Оба значения обязательны.
+
+> используется для полей max_price,a_price,c_price
 
 ```
 Разделитель: ","
@@ -413,10 +417,10 @@ https://navodki.ru/api/tenders?pw=212,3512
 *id* справочника является значением для выборки
 
 |  URL                                  | Описание                      |
-|:--------------------------------------|:--------------------------------------|
-|  https://navodki.ru/api/pw            |  Список способов определения поставщика |
-|  https://navodki.ru/api/etp           |  Список площадок    |
-|  https://navodki.ru/api/status        |  Список статусов    ||
-|  https://navodki.ru/api/platform      |  Список законов    ||
-|  https://navodki.ru/api/regions       |  Список регионов    ||
-|  https://navodki.ru/api/categories    |  Список отраслей    ||
+|:--------------------------------------|:---------------------------|
+|  https://navodki.ru/api/pw            |  Способы определения поставщика |
+|  https://navodki.ru/api/etp           |  Площадки    |
+|  https://navodki.ru/api/status        |  Статусы    |
+|  https://navodki.ru/api/platform      |  Законов    |
+|  https://navodki.ru/api/regions       |  Регионы    |
+|  https://navodki.ru/api/categories    |  Отрасли    |
