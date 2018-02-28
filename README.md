@@ -205,7 +205,7 @@ https://navodki.ru/api/tenders?search="услуги -общественного 
 |  uri          |  `string`         | true            | Ссылка на карточку тендера                                                       | 
 |  url_oos      |  `string`         | false           | Ссылка на карточку тендера на сайте zakupki.gov.ru                                                       | 
 |  name         |   `string`        | false           | Наименование закупки                                              | 
-|  subject      |  `string`         | false           | Наименование темы (для 223 закона)                              |  
+|  subject      |  `string`         | false           | Наименование темы для 223 закона (может быть пустым или совпадать с name)                              |  
 |  status       |  `int`            | true            |[Статус](#user-content-status)                              |  
 |  status_name  |  `string`         | false           |Наименование статуса                                   |  
 |  platform_id  |  `int`            | true            |[Id закона](#user-content-platform_id)                 |  
