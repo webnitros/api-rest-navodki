@@ -378,12 +378,9 @@ https://navodki.ru/api/tenders?customers=7708697381
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?categories=244,380,245
-```
-  
-Список значений: 
 
-```
-https://navodki.ru/api/categories
+Справочник 
+[https://navodki.ru/api/categories](https://navodki.ru/api/categories)
 ```
 
 
@@ -397,11 +394,8 @@ https://navodki.ru/api/categories
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?regions=99,33,34,35,38,39,43,48,50
-```
-  
-Список значений: 
 
-```
+Справочник 
 https://navodki.ru/api/regions
 ```
 
@@ -416,11 +410,8 @@ https://navodki.ru/api/regions
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?etp=9,7,65,121,2,63,117
-```
-  
-Список значений: 
 
-```
+Справочник 
 https://navodki.ru/api/etp
 ```
 
@@ -434,10 +425,7 @@ https://navodki.ru/api/etp
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?pw=212,3512
-```
-  
-Список значений: 
 
-```
+Справочник 
 https://navodki.ru/api/pw
 ```
