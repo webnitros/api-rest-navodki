@@ -3,8 +3,9 @@
  * RestClient
  * @website https://github.com/tcdent/php-restclient
  * */
-class RestClientNavodki {
+class RestClient {
 
+    protected static $instance;
     public $options;
     public $handle; // cURL resource handle.
 
@@ -27,8 +28,8 @@ class RestClientNavodki {
             'curl_options' => [],
             'curl_ssl' => false,
             'build_indexed_queries' => FALSE,
-            'user_agent' => "PHP RestClient/0.1.7",
-            'base_url' => "http://api.navodki.ru/rest",
+            'user_agent' => "PHP RestClient Navodki.ru/0.1.7",
+            'base_url' => "https://navodki.ru/api/",
             'format' => 'json',
             'format_regex' => "/(\w+)\/(\w+)(;[.+])?/",
             'decoders' => [
@@ -36,14 +37,33 @@ class RestClientNavodki {
                 'php' => 'unserialize'
             ],
             'username' => NULL,
-            'password' => NULL
+            'password' => NULL,
+            'client_secret' => '',
+            'access_token' => '',
         ];
 
         $this->options = array_merge($default_options, $options);
         if(array_key_exists('decoders', $options))
             $this->options['decoders'] = array_merge(
                 $default_options['decoders'], $options['decoders']);
+
     }
+
+
+    /**
+     * Set the globally available instance of the logger.
+     *
+     * @param array $options
+     * @return static
+     */
+    public static function getInstance($options = array())
+    {
+        if (is_null(static::$instance)) {
+            static::$instance = new static($options);
+        }
+        return static::$instance;
+    }
+
 
 
     public function set_option($key, $value){
@@ -128,7 +148,26 @@ class RestClientNavodki {
         return $this->execute($url, 'HEAD', $parameters, $headers);
     }
 
+
+    /**
+     * Записываем ключ авторизации
+     */
+    private function setAccessToken()
+    {
+        if ($this->options['access_token']) {
+            $this->options['headers'] = array(
+                'AUTHORIZATION' => 'Bearer ' . $this->options['access_token'],
+                'grant_type' => 'authorization_code',
+                'X-Secret' => $this->options['client_secret']
+            );
+            unset($this->options['access_token']);
+        }
+    }
+
+
     public function execute($url, $method='GET', $parameters=[], $headers=[]){
+        $this->setAccessToken();
+
         $client = clone $this;
         $client->url = $url;
         $client->handle = curl_init();
@@ -138,12 +177,25 @@ class RestClientNavodki {
             CURLOPT_USERAGENT => $client->options['user_agent']
         ];
 
+
         if($client->options['username'] && $client->options['password'])
             $curlopt[CURLOPT_USERPWD] = sprintf("%s:%s",
                 $client->options['username'], $client->options['password']);
 
+
+
+        if($client->options['username'] && $client->options['password'])
+            $curlopt[CURLOPT_USERPWD] = sprintf("%s:%s",
+                $client->options['username'], $client->options['password']);
+
+
+        if (!is_array($headers)) {
+            $headers = array();
+        }
+
         if(count($client->options['headers']) || count($headers)){
             $curlopt[CURLOPT_HTTPHEADER] = [];
+
             $headers = array_merge($client->options['headers'], $headers);
             foreach($headers as $key => $values){
                 foreach(is_array($values)? $values : [$values] as $value){
@@ -212,7 +264,10 @@ class RestClientNavodki {
         $curlopt[CURLOPT_SSL_VERIFYPEER] = $client->options['curl_ssl'];
 
 
+
         curl_setopt_array($client->handle, $curlopt);
+
+
 
         $client->parse_response(curl_exec($client->handle));
         $client->info = (object) curl_getinfo($client->handle);
@@ -221,6 +276,7 @@ class RestClientNavodki {
         curl_close($client->handle);
         return $client;
     }
+
 
     public function parse_response($response){
         $headers = [];
@@ -285,4 +341,3 @@ class RestClientNavodki {
         return $this->decoded_response;
     }
 }
-

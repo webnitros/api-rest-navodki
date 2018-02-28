@@ -25,24 +25,42 @@ API возвращает данные в формате JSON. Формат да�
 
 Для отправки запросов на сервер вы можете использовать класс **RestClient**
 
+|  Параметр     | Описание   | 
+|:-----------------|:--------------|
+|  access_token    |  API-ключ     |
+|  client_secret   |  Секретный ключ     |
+
+> для получение доступа пишете на email **info@navodki.ru**
+> тестовый доступ с ограничениями уже прописан в примере
+
 ```php
 <?php
-include dirname(__FILE__) . '/RestClient.php';
+include dirname(__FILE__) . '/RestClient.class.php';
 
-$api = new RestClientNavodki(array(
-    'base_url' => 'https://navodki.ru/api'
+$api = new RestClient(array(
+    'access_token' => 'c490a15ccdb2fec588e50cc86cea56753baf74a7',
+    'client_secret' => '27918041a7dd4a9ce39a60c442400de7da9343e0',
 ));
 
-
-$results = $api->get("tenders", ['limit' => 100,'categories' => 381,382,728,]);
+$results = $api->get('tenders', 
+    array(
+        'print' => 1, 
+        'limit' => 100, 
+        'categories' => 381,382,728
+    )
+);
 if ($results->info->http_code == 200) {
-    //$results = $results->decode_response();
+    
     foreach ($results->response as $result) {
 
         echo '<pre>';
         print_r($result); die;
+        
     }
 } else {
+    echo '<pre>'; 
+    print_r($results->response);
+    
     die('Error');
 }
 ```
@@ -98,12 +116,14 @@ https://navodki.ru/api/tenders?tid=14448486&platform_id=1,3&categories=232,232
           "num": 31705899311,
           "tid": 14754476,
           "uri": "https://navodki.ru/tenders/14754476",
+          "url_oos": "https://navodki.ru/tenders/14754476?redirect=oos",
+          "url_placer": "https://navodki.ru/tenders/14754476?redirect=placer",
           "name": "Поставка канцелярских товаров",
           "subject": "Поставка канцелярских товаров",
           "status": 2,
           "status_name": "Работа комиссии",
           "platform_id": 3,
-          "platform_name": "223 \u0437\u0430\u043a\u043e\u043d",
+          "platform_name": "223 закон",
           "published": "12.02.2018",
           "updatedon": "19.02.2018",
           "start_date": 0,
@@ -178,9 +198,10 @@ https://navodki.ru/api/tenders?search="услуги общественного �
 |:--------------|:------------------|:----------------|:----------------:|
 |  num          |  `varchard`       | true            | [Номер закупки присвоеный ЕИС](#user-content-num)                                             | 
 |  tid          |  `int`            | true            | [id тендера](#user-content-tid)                                             | 
-|  uri          |  `string`         | true            | Ссылка                                                        | 
-|  name         |   `string`        | false           | Наименование                                                  | 
-|  subject      |  `string`         | false           | Наименование (для 223 закона)                              |  
+|  uri          |  `string`         | true            | Ссылка карточку тендера                                                       | 
+|  url_oos      |  `string`         | false           | Ссылка на площадку сайта zakupki.gov.ru                                                       | 
+|  name         |   `string`        | false           | Наименование закупки                                              | 
+|  subject      |  `string`         | false           | Наименование темы (для 223 закона)                              |  
 |  status       |  `int`            | true            |[Статус](#user-content-status)                              |  
 |  status_name  |  `string`         | false           |Наименование статуса                                   |  
 |  platform_id  |  `int`            | true            |[Id закона](#user-content-platform_id)                 |  
@@ -203,10 +224,6 @@ https://navodki.ru/api/tenders?search="услуги общественного �
 |  currency_code|  `string`         | false           | Код валюты                                       |  
 |  currency_digitalCode|  `int`     | false           | Цифровая валюта                           |  
 |  attach       |  `boolean`        | true            |Метка о наличии документации                            |  
-
-
-
-
 
 
 
