@@ -380,7 +380,7 @@ https://navodki.ru/api/tenders?customers=7708697381
 https://navodki.ru/api/tenders?categories=244,380,245
 
 Справочник 
-[https://navodki.ru/api/categories](https://navodki.ru/api/categories)
+https://navodki.ru/api/categories?print=1
 ```
 
 
@@ -396,7 +396,7 @@ https://navodki.ru/api/tenders?categories=244,380,245
 https://navodki.ru/api/tenders?regions=99,33,34,35,38,39,43,48,50
 
 Справочник 
-https://navodki.ru/api/regions
+https://navodki.ru/api/regions?print=1
 ```
 
 
@@ -412,7 +412,7 @@ https://navodki.ru/api/regions
 https://navodki.ru/api/tenders?etp=9,7,65,121,2,63,117
 
 Справочник 
-https://navodki.ru/api/etp
+https://navodki.ru/api/etp?print=1
 ```
 
 <a name="user-content-pw"></a>
@@ -427,5 +427,5 @@ https://navodki.ru/api/etp
 https://navodki.ru/api/tenders?pw=212,3512
 
 Справочник 
-https://navodki.ru/api/pw
+https://navodki.ru/api/pw?print=1
 ```
