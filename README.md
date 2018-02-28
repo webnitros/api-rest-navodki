@@ -299,29 +299,6 @@ https://navodki.ru/api/tenders?tid=14448486
 ```
 https://navodki.ru/api/tenders?status=2,3,4,6
 ```
-  
-Список возмржных значнений: 
-
-```javascript
-[
-    { 
-      id: 2,
-      name: "Работа комиссии",  
-    },
-    { 
-      id: 3,
-      name: "Закупка отменена",  
-    },
-    { 
-      id: 4,
-      name: "Закупка завершена",  
-    },
-    { 
-      id: 6,
-      name: "Идет прием заявок",  
-    },
-]
-```
 
 <a name="user-content-platform_id"></a>
 ### ID закона
@@ -330,21 +307,6 @@ https://navodki.ru/api/tenders?status=2,3,4,6
 
 ```
 https://navodki.ru/api/tenders?platform_id=1,3
-```
-  
-Список возмржных значнений: 
-
-```javascript
-[
-    { 
-      id: 1,
-      name: "44 закон",  
-    },
-    { 
-      id: 3,
-      name: "223 закон",  
-    },
-]
 ```
 
 
@@ -396,7 +358,6 @@ https://navodki.ru/api/tenders?customers=7708697381
 <a name="user-content-categories"></a>
 ### Отрасли
 
-
 Выборка тендеров по отрасли закупки. Отрасль закупок привязана к справочнику ОКПД2 с помощью кода каждому тендеру назначается отрасль
 
 ```
@@ -417,9 +378,6 @@ https://navodki.ru/api/tenders?categories=244,380,245
 Формат ввода данных: "int"
 
 https://navodki.ru/api/tenders?regions=99,33,34,35,38,39,43,48,50
-
-Справочник 
-https://navodki.ru/api/regions?print=1
 ```
 
 
@@ -458,5 +416,7 @@ https://navodki.ru/api/tenders?pw=212,3512
 |:--------------------------------------|:--------------------------------------|
 |  https://navodki.ru/api/pw            |  Список способов определения поставщика |
 |  https://navodki.ru/api/etp           |  Список площадок    |
+|  https://navodki.ru/api/status        |  Список статусов    ||
+|  https://navodki.ru/api/platform      |  Список законов    ||
 |  https://navodki.ru/api/regions       |  Список регионов    ||
 |  https://navodki.ru/api/categories    |  Список отраслей    ||
