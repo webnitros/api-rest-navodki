@@ -161,6 +161,7 @@ class RestClient {
                 'X-Secret' => $this->options['client_secret']
             );
             unset($this->options['access_token']);
+            unset($this->options['client_secret']);
         }
     }
 
