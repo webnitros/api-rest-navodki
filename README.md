@@ -72,7 +72,7 @@ API возвращает данные в формате JSON.
 
 ---
 
-### Пример 
+### Пример запроса через класс RestClient
 
 ```php
 <?php
@@ -111,7 +111,7 @@ if ($results->info->http_code == 200) {
 
 
 <a name="user-content-tenders"></a>
-#### Пример успешного ответа по тендерам:
+#### Пример успешного ответа по закупкам:
 
 ```json
 {
@@ -123,7 +123,7 @@ if ($results->info->http_code == 200) {
           "uri": "https://navodki.ru/tenders/14754476",
           "url_oos": "http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?regNumber=0137300043318000065",
           "name": "Поставка канцелярских товаров",
-          "subject": "Поставка канцелярских товаров",
+          "subject_223": "Поставка канцелярских товаров",
           "status": 2,
           "status_name": "Работа комиссии",
           "platform_id": 3,
@@ -181,7 +181,7 @@ if ($results->info->http_code == 200) {
           "uri": "https://navodki.ru/contracts/76023",
           "url_oos": "http://zakupki.gov.ru/223/purchase/public/purchase/info/common-info.html?regNumber=31503055368",
           "name": "Поставка продовольственных товаров. Конфеты в ассортименте",
-          "name_contract": "987",
+          "name_contract_223": "987",
           "status": 9,
           "status_name": "Исполнение завершено",
           "platform_id": 3,
@@ -288,7 +288,7 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 |  uri          |  `string`         | true            | Ссылка на карточку тендера                                                       | 
 |  url_oos      |  `string`         | false           | Ссылка на карточку тендера на сайте zakupki.gov.ru                                                       | 
 |  name         |   `string`        | false           | Наименование закупки                                              | 
-|  subject      |  `string`         | false           | Наименование темы для 223 закона (может быть пустым или совпадать с name)                              |  
+|  subject_223      |  `string`         | false           | Наименование темы для 223 закона (может быть пустым или совпадать с name)                              |  
 |  status       |  `int`            | true            |[Статус](#user-content-status)                              |  
 |  status_name  |  `string`         | false           |Наименование статуса                                   |  
 |  platform_id  |  `int`            | true            |[Id закона](#user-content-platform_id)                 |  
@@ -313,7 +313,7 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 |  attach       |  `boolean`        | true            |Метка о наличии документации                            |  
 |  **Для контрактов**               |  
 |  number       |  `string`         | true            | Номер контракта                           |  
-|  name_contract       |  `string`  | true            | Наименование контракта (для 223)                        |  
+|  name_contract_223       |  `string`  | true            | Наименование контракта (для 223)                        |  
 |  hassub       |  `boolean`        | true            | Метка о том что контракт является субподрядом                           |  
 |  suppliers       |  `array`       | true            | Генподрядчики заключившие контракт                          |  
 |  contractDate       |  `date`     | true            | Дата заключения контракта                         |  
