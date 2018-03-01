@@ -3,23 +3,25 @@
 API позволяет интегрировать данные закупок из ЕИС (zakupki.gov.ru) 
 
 Теперь вы можете:
-* получить доступ к тендер за прошедшие сутки c сайта закупок zakupki.gov.ru; 
+* получить доступ к **закупкам** за прошедшие сутки c сайта закупок zakupki.gov.ru; 
+* получить доступ к **контрактам** за прошедшие сутки c сайта закупок zakupki.gov.ru; 
 * следить за изменение статуса по дате обновления;
 * получить информацию о закупке по номеру закупки
 * использовать ключевые запрос для поиска информации
+* используя контракты получать победителей заключивших контракт
 
 Бэта 2.0
 
 
 ## Демонстрация API закупок
 
-Вернет json массив с данным по закупкам
+Доступная информаци по:
 
 - закупки
 [https://navodki.ru/api/tenders](https://navodki.ru/api/tenders)
 
 - контракты
-[http://dev.navodki.ru/api/contracts](http://dev.navodki.ru/api/contracts)
+[https://navodki.ru/api/contracts](https://dnavodki.ru/api/contracts)
 
 
 > В тестовом доступе некоторые поля зашифрован "******"
@@ -31,7 +33,9 @@ API позволяет интегрировать данные закупок и
   
 * [Получение закупок через API ](#user-content-service)    
 * [Список поддерживаемых параметров](#user-content-params)    
-* [Управление списками](#user-content-lis)    
+* [Пример ответа закупки](#user-content-tenders)    
+* [Пример ответа контракты](#user-content-contracts)    
+* [Управление списками](#user-content-list)    
 * [Коллекция филтров](#user-content-filters)
     - [Выборка по ключевым словам](#user-content-query)   
     - [Выборка по номеру закупки](#user-content-num)    
@@ -105,7 +109,9 @@ if ($results->info->http_code == 200) {
 
 ---
 
-#### Пример успешного ответа:
+
+<a name="user-content-tenders"></a>
+#### Пример успешного ответа по тендерам:
 
 ```json
 {
@@ -154,6 +160,59 @@ if ($results->info->http_code == 200) {
           "currency_digitalCode": "643",
           "currency_name": "Российский рубль",
           "attach": true
+      }
+    ]
+}
+```
+
+
+<a name="user-content-contracts"></a>
+#### Пример успешного ответа по контрактам:
+
+```json
+{
+    "total":"17",
+    "results":[
+          {
+          "num": "31503055368",
+          "number": "50274149764150001220000",
+          "uid": 1828618,
+          "tid": 76023,
+          "uri": "https://navodki.ru/contracts/76023",
+          "url_oos": "http://zakupki.gov.ru/223/purchase/public/purchase/info/common-info.html?regNumber=31503055368",
+          "name": "Поставка продовольственных товаров. Конфеты в ассортименте",
+          "name_contract": "987",
+          "status": 9,
+          "status_name": "Исполнение завершено",
+          "platform_id": 3,
+          "platform_name": "223 закон",
+          "published": "30.06.2016",
+          "updatedon": "22.02.2018",
+          "start_date": "2015-12-29 00:00:00",
+          "end_date": "2016-11-29 00:00:00",
+          "max_price": "288 000,00",
+          "hassub": true,
+          "customers": [
+              {
+                  "name": "МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ УЧРЕЖДЕНИЕ &quot;ЦЕНТР ДЕТСКОГО И ДИЕТИЧЕСКОГО ПИТАНИЯ&quot; ГОРОДСКОГО ОКРУГА ГОРОД УФА РЕСПУБЛИКИ БАШКОРТОСТАН",
+                  "INN": "0274149764"
+              }
+          ],
+          "suppliers": [
+              {
+                  "name": "Минязов Рустем Назирович",
+                  "INN": "11111026412420110"
+              }
+          ],
+          "contractDate": "22.02.2018",
+          "placing_code": "400002",
+          "placing_name": "Иной способ закупки, предусмотренный правовым актом заказчика, указанным в части 1 статьи 2 Федерального закона)",
+          "approveDate": "22.02.2018",
+          "categories": [
+              "131"
+          ],
+          "currency": 1,
+          "currency_name": "Российский рубль"
       }
     ]
 }
@@ -252,6 +311,15 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 |  currency_code|  `string`         | false           | Код валюты                                       |  
 |  currency_digitalCode|  `int`     | false           | Цифровая валюта                           |  
 |  attach       |  `boolean`        | true            |Метка о наличии документации                            |  
+|  **Для контрактов**               |  
+|  number       |  `string`         | true            | Номер контракта                           |  
+|  name_contract       |  `string`  | true            | Наименование контракта (для 223)                        |  
+|  hassub       |  `boolean`        | true            | Метка о том что контракт является субподрядом                           |  
+|  suppliers       |  `array`       | true            | Генподрядчики заключившие контракт                          |  
+|  contractDate       |  `date`     | true            | Дата заключения контракта                         |  
+|  approveDate       |  `date`     | true            | Дата завершения исполнения контракта                         |  
+|  placing_code       |  `string`     | true            | Код способа определения поставщика                        |  
+|  placing_name       |  `string`     | true            | Наименование кода способа определения поставщика                       |  
 
 
 
