@@ -24,8 +24,8 @@ API позволяет интегрировать данные закупок и
 [https://navodki.ru/api/contracts](https://dnavodki.ru/api/contracts)
 
 
-> В тестовом доступе некоторые поля зашифрован "******".   
-> Список шифрованых полей: num,number,url_oos,status,status_name,INN.  
+> В тестовом режиме некоторые поля зашифрован "******".   
+> Список шифрованых полей: num,number,url_tenders_oos,url_contracts_oos,status,status_name,INN.  
 > [получение полного доступа](#user-content-service)
 
 --- 
@@ -103,7 +103,7 @@ if ($results->info->http_code == 200) {
           "num": 31705899311,
           "tid": 14754476,
           "uri": "https://navodki.ru/tenders/14754476",
-          "url_oos": "http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?regNumber=0137300043318000065",
+          "url_tenders_oos": "http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?regNumber=0137300043318000065",
           "name": "Поставка канцелярских товаров",
           "subject_223": "Поставка канцелярских товаров",
           "status": 2,
@@ -161,7 +161,8 @@ if ($results->info->http_code == 200) {
           "uid": 1828618,
           "tid": 76023,
           "uri": "https://navodki.ru/contracts/76023",
-          "url_oos": "http://zakupki.gov.ru/223/purchase/public/purchase/info/common-info.html?regNumber=31503055368",
+          "url_tenders_oos": "http://zakupki.gov.ru/223/purchase/public/purchase/info/common-info.html?regNumber=31503055368",
+          "url_contracts_oos": "http://zakupki.gov.ru/epz/contract/contractCard/common-info.html?reestrNumber=3362701856316000003",
           "name": "Поставка продовольственных товаров. Конфеты в ассортименте",
           "name_contract_223": "987",
           "status": 9,
@@ -268,7 +269,7 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 |  num          |  `varchard`       | true            | [Номер закупки присвоенный ЕИС](#user-content-num)                                             | 
 |  tid          |  `int`            | true            | [id тендера](#user-content-tid)                                             | 
 |  uri          |  `string`         | true            | Ссылка на карточку тендера                                                       | 
-|  url_oos      |  `string`         | false           | Ссылка на карточку тендера на сайте zakupki.gov.ru                                                       | 
+|  url_tenders_oos |  `string`      | false           | Ссылка на карточку тендера на сайте zakupki.gov.ru                                                       | 
 |  name         |   `string`        | false           | Наименование закупки                                              | 
 |  subject_223      |  `string`         | false           | Наименование темы для 223 закона (может быть пустым или совпадать с name)                              |  
 |  status       |  `int`            | true            |[Статус](#user-content-status)                              |  
@@ -302,7 +303,7 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 |  approveDate       |  `date`     | true            | Дата завершения исполнения контракта                         |  
 |  placing_code       |  `string`     | true            | Код способа определения поставщика                        |  
 |  placing_name       |  `string`     | true            | Наименование кода способа определения поставщика                       |  
-
+|  url_contracts_oos      |  `string`         | false           | Ссылка на карточку контракта на сайте zakupki.gov.ru       
 
 
 Расшифровка параметров:
