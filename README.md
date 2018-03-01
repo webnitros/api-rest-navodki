@@ -15,7 +15,11 @@ API позволяет интегрировать данные закупок и
 
 Вернет json массив с данным по закупкам
 
+- закупки
 [https://navodki.ru/api/tenders](https://navodki.ru/api/tenders)
+
+- контракты
+[http://dev.navodki.ru/api/contracts](http://dev.navodki.ru/api/contracts)
 
 
 > В тестовом доступе некоторые поля зашифрован "******"
