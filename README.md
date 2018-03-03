@@ -21,7 +21,7 @@ API позволяет интегрировать данные закупок и
 [https://navodki.ru/api/tenders](https://navodki.ru/api/tenders)
 
 - контракты
-[https://navodki.ru/api/contracts](https://dnavodki.ru/api/contracts)
+[https://navodki.ru/api/contracts](https://navodki.ru/api/contracts)
 
 
 > В тестовом режиме некоторые поля зашифрован "******".   
