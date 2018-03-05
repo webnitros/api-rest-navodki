@@ -72,16 +72,16 @@ $api = new RestClient(array(
     'client_secret' => '27918041a7dd4a9ce39a60c442400de7da9343e0',
 ));
 
-$results = $api->get('tenders', 
+$response = $api->get('tenders', 
     array(
         'print' => 1, 
         'limit' => 100, 
         'categories' => 381,382,728
     )
 );
-if ($results->info->http_code == 200) {
-    
-    foreach ($results->response as $result) {
+if ($response->info->http_code == 200) {
+    $response = $response->decode_response();
+    foreach ($results->results as $result) {
 
         echo '<pre>';
         print_r($result); die;
@@ -107,8 +107,8 @@ if ($results->info->http_code == 200) {
     "total":"17",
     "results":[
       {
+          "id": 14754476,
           "num": 31705899311,
-          "tid": 14754476,
           "uri": "https://navodki.ru/tenders/14754476",
           "url_tenders_oos": "http://zakupki.gov.ru/epz/order/notice/ea44/view/common-info.html?regNumber=0137300043318000065",
           "name": "Поставка канцелярских товаров",
@@ -163,10 +163,10 @@ if ($results->info->http_code == 200) {
     "total":"17",
     "results":[
           {
+          "id": 76023,
+          "uid": 1828618,
           "num": "31503055368",
           "number": "50274149764150001220000",
-          "uid": 1828618,
-          "tid": 76023,
           "uri": "https://navodki.ru/contracts/76023",
           "url_tenders_oos": "http://zakupki.gov.ru/223/purchase/public/purchase/info/common-info.html?regNumber=31503055368",
           "url_contracts_oos": "http://zakupki.gov.ru/epz/contract/contractCard/common-info.html?reestrNumber=3362701856316000003",
@@ -274,7 +274,7 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 |  Поле         | Тип данных        | Фильтры         | Название |
 |:--------------|:------------------|:----------------|:----------------:|
 |  num          |  `varchard`       | true            | [Номер закупки присвоенный ЕИС](#user-content-num)                                             | 
-|  tid          |  `int`            | true            | [id тендера](#user-content-tid)                                             | 
+|  id          |  `int`            | true            | [id записи](#user-content-id)                                             | 
 |  uri          |  `string`         | true            | Ссылка на карточку тендера                                                       | 
 |  url_tenders_oos |  `string`      | false           | Ссылка на карточку тендера на сайте zakupki.gov.ru                                                       | 
 |  name         |   `string`        | false           | Наименование закупки                                              | 
@@ -356,13 +356,13 @@ https://navodki.ru/api/tenders?num=31705899311
 ```
 
 
-<a name="user-content-tid"></a>
-### ID тендер
+<a name="user-content-id"></a>
+### ID записи
 
-Выборка по id. Системный индитификатор записи. Остается не изменным при изменении редакций закупок.
+Выборка по id. Системный индитификатор записи. Остается не изменным при изменении редакций.
 
 ```php
-https://navodki.ru/api/tenders?tid=14448486
+https://navodki.ru/api/tenders/14448486
 ```
 
 
