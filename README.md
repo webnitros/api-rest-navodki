@@ -19,9 +19,12 @@ API позволяет интегрировать данные закупок и
 
 - закупки
 [https://navodki.ru/api/tenders](https://navodki.ru/api/tenders)
+[https://navodki.ru/api/tenders/14966149](http://dev.navodki.ru/api/tenders/14966149)
 
 - контракты
 [https://navodki.ru/api/contracts](https://navodki.ru/api/contracts)
+[https://navodki.ru/api/contracts/42060683](https://navodki.ru/api/contracts/42060683)
+
 
 
 > В тестовом режиме некоторые поля зашифрован "******".   
@@ -464,6 +467,7 @@ https://navodki.ru/api/tenders?regions=99,33,34,35,38,39,43,48,50
 ### Площадка
 
 Выборка данных по площадке размещения закупки.
+> только для тендеров
 
 ```
 Разделитель: ","
