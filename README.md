@@ -296,9 +296,9 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 |  customers    |  `array`          | true            |   [Заказчики](#user-content-customers)                                  |  
 |  categories   |  `array`          | true            |   [Отрасли](#user-content-categories)                                  |  
 |  regions      |  `array`          | true            |   [Регион](#user-content-regions)                                         |  
-|  etp_id       |  `int`            | true            |   [Площадка](#user-content-etp_id)                                         |  
+|  etp_id       |  `int`            | true            |   [Площадка](#user-content-etp_id) (только для тендеров)                                        |  
 |  etp_name     |  `string`         | false           |   Наименование площадки                       |  
-|  pw_id        |  `int`            | true            | [Способ определения поставщика](#user-content-pw_id)                      |  
+|  pw_id        |  `int`            | true            | [Способ определения поставщика](#user-content-pw_id) (только для тендеров)                      |  
 |  pw_name      |  `string`         | false           |  Наименование способа определения поставщика                             | 
 |  currency_name|  `int`            | false           | Наименование валюты                                    |  
 |  currency_code|  `string`         | false           | Код валюты                                       |  
@@ -480,6 +480,7 @@ https://navodki.ru/api/tenders?etp=9,7,65,121,2,63,117
 ### Способу определения поставщика
 
 Выборка данных по способу определения поставщика
+> только для тендеров
 
 ```
 Разделитель: ","
