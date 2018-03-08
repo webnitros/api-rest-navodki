@@ -17,12 +17,12 @@ API позволяет интегрировать данные закупок и
 
 Доступная информаци по:
 
-- закупки
-[https://navodki.ru/api/tenders](https://navodki.ru/api/tenders)
-[https://navodki.ru/api/tenders/14966149](http://dev.navodki.ru/api/tenders/14966149)
+- закупки   
+[https://navodki.ru/api/tenders](https://navodki.ru/api/tenders)    
+[https://navodki.ru/api/tenders/14966149](https://navodki.ru/api/tenders/14966149)
 
-- контракты
-[https://navodki.ru/api/contracts](https://navodki.ru/api/contracts)
+- контракты     
+[https://navodki.ru/api/contracts](https://navodki.ru/api/contracts)        
 [https://navodki.ru/api/contracts/42060683](https://navodki.ru/api/contracts/42060683)
 
 
