@@ -1,4 +1,4 @@
-# REST API сайта NAVODKI.RU (zakupki.gov.ru)
+# REST API сайта гос закупок через NAVODKI.RU (zakupki.gov.ru)
 
 API позволяет интегрировать данные закупок из ЕИС (zakupki.gov.ru) 
 
@@ -257,12 +257,12 @@ https://navodki.ru/api/tenders?sortby=updatedon
 ```
 
 
-**relevance** - сортировка по совпадению используется в случае отправки поискового запроса в параметре **search**.
+**relevance** - сортировка по совпадению используется в случае отправки поискового запроса в параметре **query**.
 
 Вернет в порядке наибольшего совпадения
 
 ```
-https://navodki.ru/api/tenders?search="услуги%20общественного%20питания"&sortby=relevance&sortdir=DESC&print=1
+https://navodki.ru/api/tenders?query="услуги%20общественного%20питания"&sortby=relevance&sortdir=DESC&print=1
 ```
 
 ---
@@ -336,10 +336,10 @@ https://navodki.ru/api/tenders?search="услуги%20общественного
 https://navodki.ru/api/tenders?query=услуги общественного питания&print=1
 
 Список тендеров по точному совпадению поискового запроса и сортивровкой по наибольшим совпадениям
-https://navodki.ru/api/tenders?search="услуги общественного питания"&sortby=relevance&sortdir=DESC&print=1
+https://navodki.ru/api/tenders?query="услуги общественного питания"&sortby=relevance&sortdir=DESC&print=1
 
 Минусовка слов используя "-"
-https://navodki.ru/api/tenders?search="услуги -общественного питания"&sortby=relevance&sortdir=DESC&print=1
+https://navodki.ru/api/tenders?query="услуги -общественного питания"&sortby=relevance&sortdir=DESC&print=1
 
 ```
 
