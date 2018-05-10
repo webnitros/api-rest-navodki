@@ -308,7 +308,7 @@ https://navodki.ru/api/tenders?query="услуги%20общественного%
 |  number       |  `string`         | true            | Номер контракта                           |  
 |  name_contract_223       |  `string`  | true            | Наименование контракта (для 223)                        |  
 |  hassub       |  `boolean`        | true            | Метка о том что контракт является субподрядом                           |  
-|  suppliers       |  `array`       | true            | Генподрядчики заключившие контракт                          |  
+|  suppliers       |  `array`       | true            | [Генподрядчики заключившие контракт ](#user-content-suppliers)                         |  
 |  contractDate       |  `date`     | true            | Дата заключения контракта                         |  
 |  approveDate       |  `date`     | true            | Дата завершения исполнения контракта                         |  
 |  placing_code       |  `string`     | true            | Код способа определения поставщика                        |  
@@ -435,6 +435,21 @@ https://navodki.ru/api/tenders?max_price=10000,10000000
 Допустимые значения: "10 или 12 цифр"
 
 https://navodki.ru/api/tenders?customers=7708697381
+```
+
+
+
+<a name="user-content-suppliers"></a>
+### Поставщики
+
+Для выборки по поставщику используется **ИНН организации**
+
+```
+Разделитель: ","
+Формат ввода данных: "number"
+Допустимые значения: "10 или 12 цифр"
+
+https://navodki.ru/api/tenders?supplies=410901253050
 ```
 
 <a name="user-content-categories"></a>
